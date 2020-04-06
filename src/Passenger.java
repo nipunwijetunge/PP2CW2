@@ -3,6 +3,7 @@ public class Passenger {
     private String firstName;
     private String sureName;
     private String nic;
+    private int seat;
     private int secondsInQueue;
 
     public String getFirstName() {
@@ -17,6 +18,10 @@ public class Passenger {
         return nic;
     }
 
+    public int getSeat() {
+        return seat;
+    }
+
     public int getSecondsInQueue() {
         return secondsInQueue;
     }
@@ -28,6 +33,10 @@ public class Passenger {
 
     public void setNic(String nic) {
         this.nic = nic;
+    }
+
+    public void setSeat(int seat) {
+        this.seat = seat;
     }
 
     public void setSecondsInQueue(int secondsInQueue) {
