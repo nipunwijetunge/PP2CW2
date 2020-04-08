@@ -1,0 +1,3 @@
+Full Name : nipun wije  --  NIC Number : 1111111111  --  Seat No. : 1  --  Date : 2020-04-08  --  Station : Colombo
+Full Name : nipun wije  --  NIC Number : 1111111111  --  Seat No. : 2  --  Date : 2020-04-08  --  Station : Colombo
+Full Name : nipun wije  --  NIC Number : 1111111111  --  Seat No. : 4  --  Date : 2020-04-08  --  Station : Colombo

@@ -1,0 +1,28 @@
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 1 | Seconds in Queue : 12 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 2 | Seconds in Queue : 27 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 4 | Seconds in Queue : 41 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 5 | Seconds in Queue : 53 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 6 | Seconds in Queue : 66 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 7 | Seconds in Queue : 75 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 8 | Seconds in Queue : 80 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 9 | Seconds in Queue : 90 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 10 | Seconds in Queue : 97 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 11 | Seconds in Queue : 106 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 12 | Seconds in Queue : 118 | Station : Colombo
+Full Name : manoj hetti | NIC : 2222222222 | Seat No. : 13 | Seconds in Queue : 124 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 14 | Seconds in Queue : 137 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 15 | Seconds in Queue : 150 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 16 | Seconds in Queue : 158 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 17 | Seconds in Queue : 165 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 18 | Seconds in Queue : 180 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 19 | Seconds in Queue : 191 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 21 | Seconds in Queue : 202 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 22 | Seconds in Queue : 215 | Station : Colombo
+Full Name : nipun wije | NIC : 1111111111 | Seat No. : 23 | Seconds in Queue : 223 | Station : Colombo
+Full Name : manoj hetti | NIC : 2222222222 | Seat No. : 24 | Seconds in Queue : 234 | Station : Colombo
+Full Name : manoj hetti | NIC : 2222222222 | Seat No. : 25 | Seconds in Queue : 248 | Station : Colombo
+
+Maximum length queue attained : 21
+Maximum waiting time          : 248
+Minimum waiting time          : 5
+Average Waiting time          : 10.78
