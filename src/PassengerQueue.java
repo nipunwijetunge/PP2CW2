@@ -9,10 +9,10 @@ public class PassengerQueue implements Serializable {
     private int first;
     private int last;
     private int maxStayInQueue;
-    private int maxLength = 21;
+    private int maxLength = 0;
+    int maxLengthOfQueue = 21;
     int sum = 0;
     int i = 0;
-    int maxLengthAttained = 0;
 
     private void add(Passenger[] waitingList){
         Passenger temp;
@@ -22,10 +22,10 @@ public class PassengerQueue implements Serializable {
         for (Passenger p : waitingList){
             if (p != null && i < sum){
                 queueArray[i] = p;
-                if (maxLengthAttained == 21){
-                    maxLengthAttained = 21;
+                if (maxLength == 21){
+                    maxLength = 21;
                 } else {
-                    maxLengthAttained++;
+                    maxLength++;
                 }
                 System.out.println("Successfully added seat #"+waitingList[p.getSeat()-1].getSeat()+" to the queue");
                 for (int j = 0; j <= 41 ; j++){
@@ -34,7 +34,7 @@ public class PassengerQueue implements Serializable {
                     }
                 }
                 i++;
-                if (i == 21){
+                if (i == maxLengthOfQueue){
                     i = 0;
                     System.out.println("\nThe queue is full right now. Board some passengers to the train.");
                     break;
@@ -43,7 +43,7 @@ public class PassengerQueue implements Serializable {
         }
         for (int j = 0; j < queueArray.length - 1; j++) {  //.........................get the first two elements of the allNames list and compare them to each other.
             for (int k = j + 1; k < queueArray.length - 1; k++) {
-                if (queueArray[k] != null) {
+                if (queueArray[j] != null && queueArray[k] != null) {
                     if (queueArray[j].getSeat() > queueArray[k].getSeat()) { //.......if second element is greater than first one
                         temp = queueArray[j];        //.......................first element is assigned to a temporary variable
                         queueArray[j] = queueArray[k]; //.......................then second element is assigned to the first index
@@ -120,13 +120,17 @@ public class PassengerQueue implements Serializable {
     }
 
     public boolean isFull(){
-        if (queueArray[20] != null){
+        if (queueArray[maxLengthOfQueue-1] != null){
             return true;
         }
         return false;
     }
 
     public void display(){
+    }
+
+    public void setMaxStayInQueue(int maxStayInQueue) {
+        this.maxStayInQueue = maxStayInQueue;
     }
 
     public int getMaxLength(){
