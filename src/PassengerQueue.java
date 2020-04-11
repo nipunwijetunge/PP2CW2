@@ -140,4 +140,8 @@ public class PassengerQueue implements Serializable {
     public int getMaxStayInQueue() {
         return maxStayInQueue;
     }
+
+    public void setMaxLength(int maxLength) {
+        this.maxLength = maxLength;
+    }
 }

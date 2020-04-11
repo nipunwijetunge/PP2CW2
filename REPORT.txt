@@ -1,8 +1,8 @@
-Full Name : nipun wijetunge | NIC : 1111111111 | Seat No. : 8 | Seconds in Queue : 12 | Station : Colombo
-Full Name : nipun wijetunge | NIC : 1111111111 | Seat No. : 10 | Seconds in Queue : 26 | Station : Colombo
-Full Name : nipun wijetunge | NIC : 1111111111 | Seat No. : 11 | Seconds in Queue : 38 | Station : Colombo
+Full Name : nipun wijetunge | NIC : 1111111111 | Seat No. : 8 | Seconds in Queue : 13 | Station : Colombo
+Full Name : nipun wijetunge | NIC : 1111111111 | Seat No. : 10 | Seconds in Queue : 25 | Station : Colombo
+Full Name : nipun wijetunge | NIC : 1111111111 | Seat No. : 11 | Seconds in Queue : 33 | Station : Colombo
 
-Maximum length queue attained : 0
-Maximum waiting time          : 38
-Minimum waiting time          : 12
-Average Waiting time          : 12.67
+Maximum length queue attained : 3
+Maximum waiting time          : 33
+Minimum waiting time          : 13
+Average Waiting time          : 11.00

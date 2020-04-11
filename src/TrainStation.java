@@ -128,7 +128,7 @@ public class TrainStation extends Application {
                         break;
                     case "R":
                     case "r":
-                        RunSimulationAndReport(trip, report);
+                        RunSimulationAndReport(trip, report, today);
                         break;
                     case "Q":
                     case "q":
@@ -218,7 +218,7 @@ public class TrainStation extends Application {
         }
     }
 
-    private void RunSimulationAndReport(int trip, File report) throws InterruptedException {
+    private void RunSimulationAndReport(int trip, File report,LocalDate today) throws InterruptedException {
         for (int i = 0; i <= trainQueue.queueArray.length - 1; i++) {
             if (trainQueue.queueArray[i] != null && sumOfTime <= trainQueue.getMaxStayInQueue()) {
                 count++;
@@ -297,10 +297,10 @@ public class TrainStation extends Application {
                     writer.write("\nMinimum waiting time          : "+Math.round(minTime));
                     writer.write("\nAverage Waiting time          : "+f.format(averageWaitingTime));
 
-                    reportGui(trainQueue.getMaxLength(),trainQueue.getMaxStayInQueue(),Math.round(minTime),averageWaitingTime);
-
                     writer.flush();
                     writer.close();
+
+                    reportGui(trainQueue.getMaxLength(),trainQueue.getMaxStayInQueue(),Math.round(minTime),averageWaitingTime,today,trip);
                     break;
 
                 } catch (IOException e) {
@@ -349,6 +349,7 @@ public class TrainStation extends Application {
                                         trainQueue.queueArray[i].setName(firstName, sureName);
                                         trainQueue.queueArray[i].setNic(nic[1]);
                                         trainQueue.queueArray[i].setSeat(Integer.parseInt(seat[1]));
+                                        trainQueue.setMaxLength(i+1);
                                         break;
                                     }
                                 }
@@ -365,6 +366,7 @@ public class TrainStation extends Application {
                                         trainQueue.queueArray[i].setName(firstName, sureName);
                                         trainQueue.queueArray[i].setNic(nic[1]);
                                         trainQueue.queueArray[i].setSeat(Integer.parseInt(seat[1]));
+                                        trainQueue.setMaxLength(i+1);
                                     }
                                 }
                                 sort(temp);
@@ -910,7 +912,7 @@ public class TrainStation extends Application {
         }
     }
 
-    private void reportGui(int maxLength, double maxWaiting, double minWaiting, double aveWaiting){
+    private void reportGui(int maxLength, double maxWaiting, double minWaiting, double aveWaiting, LocalDate today,int trip){
         Stage stage = new Stage();
         stage.setTitle("Report");
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -921,18 +923,23 @@ public class TrainStation extends Application {
 
         ColumnConstraints col1 = new ColumnConstraints();
         col1.setPercentWidth(35);
+        col1.setHalignment(HPos.CENTER);
         ColumnConstraints col2 = new ColumnConstraints(3);
         ColumnConstraints col3 = new ColumnConstraints();
         col3.setPercentWidth(20);
+        col3.setHalignment(HPos.CENTER);
         ColumnConstraints col4 = new ColumnConstraints(3);
         ColumnConstraints col5 = new ColumnConstraints();
         col5.setPercentWidth(10);
+        col5.setHalignment(HPos.CENTER);
         ColumnConstraints col6 = new ColumnConstraints(3);
         ColumnConstraints col7 = new ColumnConstraints();
         col7.setPercentWidth(15);
+        col7.setHalignment(HPos.CENTER);
         ColumnConstraints col8 = new ColumnConstraints(3);
         ColumnConstraints col9 = new ColumnConstraints();
         col9.setPercentWidth(20);
+        col9.setHalignment(HPos.CENTER);
         gp.getColumnConstraints().addAll(col1,col2,col3,col4,col5,col6,col7,col8,col9);
 
         RowConstraints row1 = new RowConstraints(50);
@@ -955,29 +962,80 @@ public class TrainStation extends Application {
         title.setFont(Font.font("Century",FontWeight.EXTRA_BOLD,25));
 
         Label name = new Label("Name");
+        name.setFont(Font.font(null,FontWeight.BOLD,15));
         Label nic = new Label("NIC No.");
+        nic.setFont(Font.font(null,FontWeight.BOLD,15));
         Label seat = new Label("Seat No.");
+        seat.setFont(Font.font(null,FontWeight.BOLD,15));
         Label date = new Label("Date");
+        date.setFont(Font.font(null,FontWeight.BOLD,15));
         Label station = new Label("Station");
+        station.setFont(Font.font(null,FontWeight.BOLD,15));
 
         Separator hSep1 = new Separator(Orientation.HORIZONTAL);
-        Separator hSep2 = new Separator(Orientation.HORIZONTAL);
         Separator vSep1 = new Separator(Orientation.VERTICAL);
+        vSep1.setPrefHeight(300);
         Separator vSep2 = new Separator(Orientation.VERTICAL);
+        vSep2.setPrefHeight(300);
         Separator vSep3 = new Separator(Orientation.VERTICAL);
+        vSep3.setPrefHeight(300);
         Separator vSep4 = new Separator(Orientation.VERTICAL);
+        vSep4.setPrefHeight(300);
 
         FlowPane flowPane1 = new FlowPane(Orientation.VERTICAL);
+        flowPane1.setAlignment(Pos.TOP_CENTER);
+        flowPane1.setPadding(new Insets(10,0,0,0));
         FlowPane flowPane2 = new FlowPane(Orientation.VERTICAL);
+        flowPane2.setAlignment(Pos.TOP_CENTER);
+        flowPane2.setPadding(new Insets(10,0,0,0));
         FlowPane flowPane3 = new FlowPane(Orientation.VERTICAL);
+        flowPane3.setAlignment(Pos.TOP_CENTER);
+        flowPane3.setPadding(new Insets(10,0,0,0));
         FlowPane flowPane4 = new FlowPane(Orientation.VERTICAL);
+        flowPane4.setAlignment(Pos.TOP_CENTER);
+        flowPane4.setPadding(new Insets(10,0,0,0));
         FlowPane flowPane5 = new FlowPane(Orientation.VERTICAL);
-        FlowPane flowPane6 = new FlowPane(Orientation.HORIZONTAL);
+        flowPane5.setAlignment(Pos.TOP_CENTER);
+        flowPane5.setPadding(new Insets(10,0,0,0));
+        FlowPane flowPane6 = new FlowPane(Orientation.VERTICAL);
+        flowPane6.setVgap(1);
+        flowPane6.setPadding(new Insets(5,0,0,10));
 
-        Label maxLengthLbl = new Label("Maximum Length Queue Attained : "+maxLength);
-        Label maxWaitingLbl = new Label("Maximum Waiting Time         : "+maxWaiting);
-        Label minWaitingLbl = new Label("Minimum Waiting Time         : "+minWaiting);
-        Label aveWaitingLbl = new Label("Average Waiting TIme         : "+aveWaiting);
+        for (int i = 0 ; i <= boardedToTrain.length - 1 ; i++){
+            if (boardedToTrain[i] != null){
+                Label nameLbl = new Label(boardedToTrain[i].getFirstName()+" "+boardedToTrain[i].getSureName());
+                nameLbl.setFont(Font.font(null,FontWeight.SEMI_BOLD,13));
+                flowPane1.getChildren().add(nameLbl);
+                Label nicLbl = new Label(boardedToTrain[i].getNic());
+                nicLbl.setFont(Font.font(null,FontWeight.SEMI_BOLD,13));
+                flowPane2.getChildren().add(nicLbl);
+                Label seatLbl = new Label(String.valueOf(boardedToTrain[i].getSeat()));
+                seatLbl.setFont(Font.font(null,FontWeight.SEMI_BOLD,13));
+                flowPane3.getChildren().add(seatLbl);
+                Label dateLbl = new Label(String.valueOf(today));
+                dateLbl.setFont(Font.font(null,FontWeight.SEMI_BOLD,13));
+                flowPane4.getChildren().add(dateLbl);
+                if (trip == 1) {
+                    Label stationLbl = new Label("Colombo");
+                    stationLbl.setFont(Font.font(null,FontWeight.SEMI_BOLD,13));
+                    flowPane5.getChildren().add(stationLbl);
+                } else {
+                    Label stationLbl = new Label("Badulla");
+                    stationLbl.setFont(Font.font(null,FontWeight.SEMI_BOLD,13));
+                    flowPane5.getChildren().add(stationLbl);
+                }
+            }
+        }
+
+        DecimalFormat f = new DecimalFormat("0.##");
+        Label maxLengthLbl = new Label("Maximum Length Queue Attained  :   "+maxLength);
+        maxLengthLbl.setFont(Font.font(null,FontWeight.BOLD,15));
+        Label maxWaitingLbl = new Label("Maximum Waiting Time                   :   "+Math.round(maxWaiting));
+        maxWaitingLbl.setFont(Font.font(null,FontWeight.BOLD,15));
+        Label minWaitingLbl = new Label("Minimum Waiting Time                   :   "+Math.round(minWaiting));
+        minWaitingLbl.setFont(Font.font(null,FontWeight.BOLD,15));
+        Label aveWaitingLbl = new Label("Average Waiting Time                      :   "+f.format(aveWaiting));
+        aveWaitingLbl.setFont(Font.font(null,FontWeight.BOLD,15));
 
         flowPane6.getChildren().addAll(maxLengthLbl,maxWaitingLbl,minWaitingLbl,aveWaitingLbl);
 
@@ -1003,16 +1061,15 @@ public class TrainStation extends Application {
         gp.add(seat,4,2);
         gp.add(date,6,2);
         gp.add(station,8,2);
-        gp.add(vSep1,1,2,3,4);
-        gp.add(vSep2,3,2,4,4);
-        gp.add(vSep3,5,2,6,4);
-        gp.add(vSep4,7,2,8,4);
+        gp.add(vSep1,1,2,3,3);
+        gp.add(vSep2,3,2,4,3);
+        gp.add(vSep3,5,2,6,3);
+        gp.add(vSep4,7,2,8,3);
         gp.add(flowPane1,0,3);
         gp.add(flowPane2,2,3);
         gp.add(flowPane3,4,3);
         gp.add(flowPane4,6,3);
         gp.add(flowPane5,8,3);
-        gp.add(hSep2,0,4,9,4);
         gp.add(flowPane6,0,5,9,6);
         gp.add(close,0,6,9,6);
 
