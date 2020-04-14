@@ -1,3 +1,4 @@
-Full Name : nipun wijetunge  --  NIC Number : 1111111111  --  Seat No. : 8  --  Date : 2020-04-11  --  Station : Colombo
-Full Name : nipun wijetunge  --  NIC Number : 1111111111  --  Seat No. : 10  --  Date : 2020-04-11  --  Station : Colombo
-Full Name : nipun wijetunge  --  NIC Number : 1111111111  --  Seat No. : 11  --  Date : 2020-04-11  --  Station : Colombo
+Full Name : manoj hetti  --  NIC Number : 2222222222  --  Seat No. : 23  --  Date : 2020-04-15  --  Station : Colombo
+Full Name : manoj hetti  --  NIC Number : 2222222222  --  Seat No. : 24  --  Date : 2020-04-15  --  Station : Colombo
+Full Name : manoj hetti  --  NIC Number : 2222222222  --  Seat No. : 25  --  Date : 2020-04-15  --  Station : Colombo
+Full Name : manoj hetti  --  NIC Number : 2222222222  --  Seat No. : 26  --  Date : 2020-04-15  --  Station : Colombo

@@ -1,10 +1,10 @@
 public class Passenger {
 
-    private String firstName;
-    private String sureName;
-    private String nic;
-    private int seat;
-    private int secondsInQueue;
+    private String firstName; //....................first name of the passenger
+    private String sureName; //.....................sure name of the passenger
+    private String nic; //..........................nic number of the passenger
+    private int seat; //...........................seat number of the passenger
+    private int secondsInQueue; //................number of seconds the passenger waited in the queue
 
     public String getFirstName() {
         return firstName;

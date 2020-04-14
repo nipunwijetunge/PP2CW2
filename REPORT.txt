@@ -1,8 +1,9 @@
-Full Name : nipun wijetunge | NIC : 1111111111 | Seat No. : 8 | Seconds in Queue : 13 | Station : Colombo
-Full Name : nipun wijetunge | NIC : 1111111111 | Seat No. : 10 | Seconds in Queue : 25 | Station : Colombo
-Full Name : nipun wijetunge | NIC : 1111111111 | Seat No. : 11 | Seconds in Queue : 33 | Station : Colombo
+Full Name : manoj hetti | NIC : 2222222222 | Seat No. : 23 | Seconds in Queue : 11 | Date : 2020-04-15 | Station : Colombo
+Full Name : manoj hetti | NIC : 2222222222 | Seat No. : 24 | Seconds in Queue : 27 | Date : 2020-04-15 | Station : Colombo
+Full Name : manoj hetti | NIC : 2222222222 | Seat No. : 25 | Seconds in Queue : 37 | Date : 2020-04-15 | Station : Colombo
+Full Name : manoj hetti | NIC : 2222222222 | Seat No. : 26 | Seconds in Queue : 45 | Date : 2020-04-15 | Station : Colombo
 
-Maximum length queue attained : 3
-Maximum waiting time          : 33
-Minimum waiting time          : 13
-Average Waiting time          : 11.00
+Maximum length queue attained : 4
+Maximum waiting time          : 45
+Minimum waiting time          : 11
+Average Waiting time          : 11.25
